@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<h1>Библиотека</h1>
+
+<form action="{% url 'show' %}">
+    <div class="inputs-block1">
+        
+        <div class="inputs">
+            <input class="enters" name="search" type="text" placeholder="Введите слово" value="{{book.title}}">
+        </div>
+        
+        <div class="input-button">
+            <input class="btn btn-success" type="submit" value="Найти">
+        </div>
+
+        <div class="download-div">
+            <br>            
+            {% for book in books %}
+            <a class="download-link" href="{{book.adminupload.url}}" download="{{book.adminupload.url}}">
+               Download {{book.title}}</a>
+            {% endfor %}
+        </div>
+
+
+        
+    </div>
+</form>
+{% endblock %}

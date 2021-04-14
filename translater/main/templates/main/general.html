@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Главная станица</h1>
+
+<form action="{% url 'translate' %}">
+    <div class="inputs-block">
+        <div class="inputs">
+            <input class="enters" name="search" type="text" placeholder="Введите слово" value="{{words.word}}">
+        </div>
+        <div class="inputs">
+            <input class="enters"  type="text" value="{{words.translated_word}}">
+        </div>
+    </div>
+    <div class="input-button">
+        <input class="btn btn-success" type="submit" value="Перевести">
+    </div>
+
+</form>
+
+
+
+
+
+
+{% endblock %}
